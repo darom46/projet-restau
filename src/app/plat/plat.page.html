@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Plats
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>  
+    <ion-row justify-content-around *ngIf="plats != null">
+      <ion-col col-4 *ngFor="let plat of plats" (click)="detailPlat(plat)">
+        <div style="border:solid 2px rgb(223, 218, 218);margin:2px;text-align:center;width: auto;"> 
+          <div id='titre-categorie'>{{plat.nom}}</div>
+          <div id='img-categorie'>
+            <img src="{{ plat.img }}">
+          </div>
+          <div id='prix'>{{ plat.prix }} Fcfa</div>
+        </div>
+      </ion-col> 
+    </ion-row>
+</ion-grid>
+</ion-content>
